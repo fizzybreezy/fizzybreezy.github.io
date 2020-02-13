@@ -8,12 +8,12 @@ subtitle: ''
 description: ''
 keywords:
 author: fizzybreezy
-language: zh-cn
+language: en
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://fizzybreezy.github.io
 root: /
 permalink: :title/
 permalink_defaults:
@@ -41,7 +41,6 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -108,3 +107,11 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
   version: "8.2.1" # default v7.1.2
   options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
     #startOnload: true  // default true
+
+markdown:
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
