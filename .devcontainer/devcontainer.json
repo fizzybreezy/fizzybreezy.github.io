@@ -1,0 +1,11 @@
+{
+	"name": "Hexo",
+	"dockerFile": "Dockerfile",
+	
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/ash"
+	},
+	"extensions": ["davidanson.vscode-markdownlint"],
+	
+    "forwardPorts": [4000],
+}
