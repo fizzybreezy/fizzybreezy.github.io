@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="">
+
+
+
+<!-- Head tag -->
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+
+    <title>
+    
+        如何用VS Code优雅的在容器中开发 -
+    
+    Fizzy
+    </title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="fizzybreezy">
+
+    
+
+    
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <script type="text/javascript">
+    if(!("jQuery" in window)) {
+        window._jqQ = []; // jQuery call queue
+        window.jQuery = window.$ = function() {
+            _jqQ.push(arguments);
+        };
+    }
+    </script>
+    <script id="jquery-src" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" async onload="_jqQ.forEach(function(args){$.apply($,args)});delete window._jqQ;"></script>
+
+    
+    <script src="/js/script.js" type="text/javascript" async></script>
+
+    <!-- Global javascript config object -->
+    <script type="text/javascript">
+    var CONFIG = {
+    
+    
+    };
+    </script>
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" async></script>
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="post">
+    <nav id="header">
+    <div class="container clearfix">
+        <div class="logo" style="width: auto;">
+    <a href="/" title="Fizzy" rel="home" style="text-decoration: none;">
+    
+        <span class="brand-logo">
+        
+            Fizzy
+        
+        </span>
+    
+    </a>
+</div>
+
+        <div id="global-nav">
+            <div class="gnli ">
+                <a class="gna fa fa-home" href="/" title="Fizzy">
+                    <span class="gn-item">Home</span>
+                </a>
+            </div>
+            <div id="dropdown" class="gnli current">
+                <a class="gna fa fa-bars" href="#">
+                    <span class="gn-item">Navigation</span>
+                </a>
+                <table id="dropdown-menu">
+    <tbody>
+        
+        <tr class="trline">
+            <td class="tdleft">Categories</td>
+            <td class="tdright tab-ul tab-categories">
+                
+                <a href="/categories/Coding/">Coding</a>
+                
+                <a href="/categories/Hexo/">Hexo</a>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="tdleft">Tags</td>
+            <td class="tdright tab-ul tab-tags">
+                <a href="/tags/Blog/" style="font-size: 12px;">Blog</a> <a href="/tags/Hexo/" style="font-size: 12px;">Hexo</a> <a href="/tags/Travis-CI/" style="font-size: 12px;">Travis CI</a> <a href="/tags/VS-Code/" style="font-size: 12px;">VS Code</a> <a href="/tags/Docker/" style="font-size: 12px;">Docker</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+            </div>
+            
+            <div class="gnli">
+                <a class="gna fa fa-archive" href="/archives/index.html" title="">
+                    <span class="gn-item">Archive</span>
+                </a>
+            </div>
+            
+            <div class="gnli">
+                <a class="gna fa fa-user" href="/about/index.html" title="">
+                    <span class="gn-item">About</span>
+                </a>
+            </div>
+            
+        </div>
+        
+<form method="get" id="search-form" action="/search.html">
+    <input type="text" name="keywords" id="search-input" placeholder="Input keyword" />
+    <button type="submit" id="search-submit">
+        <span class="fa fa-search"></span>
+    </button>
+</form>
+
+
+
+    </div>
+</nav>
+
+    
+<main id="content">
+    <div class="container clearfix">
+        <div id="primary" >
+            <nav class="breadcrumb-navigation">
+                <a rel="bookmark" href="/">Home</a>
+                <span class="breadcrumb-arrow fa fa-angle-right"></span>
+                <a href="/categories/Coding/" title="Coding" rel="category tag">Coding</a>
+
+                <span class="breadcrumb-arrow fa fa-angle-right"></span>
+                如何用VS Code优雅的在容器中开发
+            </nav>
+            <article class="single-post">
+                <header class="post-header">
+                    <h1 class="post-title">
+                        <a href="/code-in-docker/" title="如何用VS Code优雅的在容器中开发">如何用VS Code优雅的在容器中开发</a>
+                    </h1>
+                </header>
+                <div class="post-meta">
+    <ul class="inline-ul">
+        <li class="inline-li">
+            <span>Posted at</span> <time>2020-02-11</time>
+        </li>
+        
+        <li class="inline-li">
+            <span class="post-span">·</span>
+        </li>
+        <li class="inline-li">
+            <span>Updated at</span> <time>2020-02-14</time>
+        </li>
+        
+        
+        <li class="inline-li">
+            <span class="post-span">·</span>
+        </li>
+        <li class="inline-li">
+            <a href="/categories/Coding/" title="Coding" rel="category tag">Coding</a>
+
+        </li>
+        
+        
+        <li class="inline-li">
+            <span class="post-span">·</span>
+        </li>
+        <li class="inline-li">
+            <span id="busuanzi_value_page_pv"></span> Views
+        </li>
+        
+    </ul>
+</div>
+
+                <div class="post-body clearfix">
+                    <div class="post-content">
+                        
+                        <p>最近干了不少零碎事，写论文，搭博客，填表爬虫。<s>为了优雅</s>，这些杂七乱八的活用到的开发环境自然要容器化，既能互相隔离，又方便一言不合开新容器从头再来。</p>
+<a id="more"></a>
+<p>根据 Dockerfile 构建包含开发环境的镜像，利用 VS Code 的 Remote - Container 插件创建容器、挂载源码目录并在容器内安装 VS Code Server，实现用容器内的开发环境处理本地的代码。</p>
+<p><img src="/images/architecture-containers.png" alt="architecture-containers"></p>
+<p>👆就是这么个意思。</p>
+<p>首先在<strong>源码目录</strong>内新建一个 <code>.devcontainer</code> 文件夹，里面放一个 <code>Dockerfile</code> 和一个 <code>devcontaniner.json</code> 。根据源码内容配置文件内容，以我写论文的 TeX Live 环境为例</p>
+<p><code>Dockerfile</code></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> alpine</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> sed -i <span class="string">'s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g'</span> /etc/apk/repositories &amp;&amp; \</span></span><br><span class="line"><span class="bash">    apk add texlive-full libstdc++ git</span></span><br></pre></td></tr></table></figure>
+<p>其中git和libstdc++是为 VS Code 准备的。</p>
+<p><code>devcontainer.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"TeX Live"</span>,</span><br><span class="line">  <span class="attr">"dockerFile"</span>: <span class="string">"Dockerfile"</span>,</span><br><span class="line">  <span class="attr">"settings"</span>: &#123;</span><br><span class="line">    <span class="attr">"terminal.integrated.shell.linux"</span>: <span class="string">"/bin/ash"</span></span><br><span class="line">    <span class="comment">//settings.json里的其他配置， 太长不写</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"extensions"</span>: [james-yu.latex-workshop], <span class="comment">// 插件标识</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>安装 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" rel="noopener">Remote - Container</a> 插件，点击左下角绿色图标，在弹出对话框中选择 “ Remote-Containers: Open Folder in Container …” 选项，打开刚才搞的<strong>源码目录</strong>，VS Code 就会自动构建镜像、新建容器并进行初始化配置，自动化程度很高。</p>
+<p>默认情况下，VS Code 将在新容器的文件系统内安装 VS Code Server 和插件，如果经常需要开新容器，如<strong>重建镜像</strong>或<strong>使用同一镜像打开不同文件夹</strong>，则可以将其在数据卷（volume）中，并在每次创建新容器时挂载，虽然会降低性能，但可节约时间。</p>
+<p>在 <code>devcontainer.json</code> 中添加以下部分：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">"mounts": [</span><br><span class="line">    <span class="comment">// 二选一</span></span><br><span class="line">    <span class="comment">// 仅保留插件</span></span><br><span class="line">    "source=unique-vol-name-here,target=/root/.vscode-server/extensions,type=volume",</span><br><span class="line">    <span class="comment">// 保留插件和VS Code Server</span></span><br><span class="line">    "source=unique-vol-name-here,target=/root/.vscode-server,type=volume",</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>如果想重新安装 VS Code Server和插件，删掉容器卷即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume rm unique-vol-name-here</span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2>
+<p><a href="https://code.visualstudio.com/docs/remote/containers" target="_blank" rel="noopener">Developing inside a Container</a><br>
+<a href="https://code.visualstudio.com/docs/remote/containers-advanced" target="_blank" rel="noopener">Advanced Container Configuration</a></p>
+
+                    </div>
+                </div>
+                
+
+<div class="license-notice">
+    <span>Author: </span>fizzybreezy<br>
+    <span>Posted at: </span>2020-02-11<br>
+    <span>Updated at: </span>2020-02-14<br>
+    <span>Licensed under: </span>
+    
+    <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">
+    
+    BY-SA
+    
+    </a>
+    
+</div>
+
+                <nav class="post-tags">
+                
+                    
+                    <a href="/tags/VS-Code/" title="VS Code" rel="tag" class="fa fa-tag">VS Code</a>
+                    
+                    <a href="/tags/Docker/" title="Docker" rel="tag" class="fa fa-tag">Docker</a>
+                    
+                
+                </nav>
+            </article>
+        </div><!-- div#primary -->
+        <ul id="pager">
+
+    
+    <li class="next">
+        <a href="/about-building-this-site/" title="关于这个博客的搭建" class="tooltipped tooltipped-n" aria-label="关于这个博客的搭建">Next post <span class="fa fa-chevron-right"></span></a>
+    </li>
+    
+</ul>
+
+        
+<section id="comments">
+    
+</section>
+
+
+        
+    </div>
+</main>
+
+    <!-- Footer -->
+    
+<!-- #content -->
+<footer id="footer">
+    <div class="container">
+        <p>
+            <span class="cc-license">
+                <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" title="Creative Commons license by-sa">
+                <span class="cc cc-cc"></span>
+                
+                    <span class="cc cc-by"></span>
+                
+                    <span class="cc cc-sa"></span>
+                
+                </a>
+            </span>
+            &nbsp;2020 Fizzy.
+        </p>
+        <p>Themed by <a href="https://github.com/unnamed42/hexo-theme-kunkka" target="_blank" rel="noopener">Kunkka</a> | Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>.</p>
+        
+
+
+<div class="sns-icons">
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+</div>
+
+
+    </div>
+</footer>
+<!-- #footer -->
+
+  <script src='https://unpkg.com/mermaid@8.2.1/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'neutral'});
+    }
+  </script>
+
+
+    <div id="totop" title="Back to top">
+    <canvas id="totop-canvas" width="48" height="48"></canvas>
+    <div id="totop-percent"></div>
+</div>
+
+</body>
+
+</html>
